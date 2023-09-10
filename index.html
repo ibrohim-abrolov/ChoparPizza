@@ -47,18 +47,49 @@
                     <button class="site-header__menu" type="button"></button>
                 </div>
             </div>
+            <!-- <img src="./images/quvvat.webp" alt=""> -->
         </div>
     </header>
     <!--   Header finish  -->
-
+    
     <main class="site-main">
         <!--   Hero start   -->
-        <section class="hero">
-            <div class="container"></div>
+        <section class="hero mt-5 mb-5">
+            <div class="container">
+                <div class="hero__mini-wrapperc d-flex justify-content-between align-items-center mb-5">
+                    <h1 class="hero__heading mt-0">
+                        Pitsa
+                    </h1>
+                    <button class="hero__bookmark-btn position-relative btn btn-warning text-white" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger badge-element">
+                        </span>
+                        Savatda
+                    </button>
+                </div>
+                <ul class="hero__list d-flex flex-column row-gap-4 flex-md-row flex-wrap justify-content-evenly row-gap-lg-5 column-gap-md-3"></ul>
+                
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Chosen food</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <ol class="modal-body modal-list">
+                            </ol>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Yopish</button>
+                                <button type="button" class="btn btn-primary finish-order">Buyurtma berish</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
         <!--   Hero finish   -->
     </main>
-
+    
     <!--   Footer start   -->
     <footer class="site-footer">
         <div class="container"></div>
