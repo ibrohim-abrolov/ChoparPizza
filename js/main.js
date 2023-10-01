@@ -1,9 +1,16 @@
-const userId = localStorage.getItem("user_id");
-const users = JSON.parse(localStorage.getItem("users"));
+// const userId = localStorage.getItem("user_id");
+// const users = JSON.parse(localStorage.getItem("users"));
 // const foundUser = users.find(item => item.id == userId);
+const elLocation = document.querySelector(".site-header__location");
+const elPhoneNum = document.querySelector(".site-header__tel");
+const elSelect = document.querySelector(".site-header__select");
+const elMenuBtn = document.querySelector(".site-header__menu");
+const elNavigation = document.querySelector(".nav");
+const elMain = document.querySelector(".site-main");
 const elList = document.querySelector(".hero__list");
 const badgeElement = document.querySelector(".badge-element");
 const elModalList = document.querySelector(".modal-list");
+const pizzaFragment = document.createDocumentFragment();
 
 const pizzaFood = [
     {
@@ -142,10 +149,11 @@ const pizzaFood = [
         pizza_count: 0,
     },
 ];
-const food_orders = [];
+const food_orders = JSON.parse(localStorage.getItem("orders"));
+localStorage.setItem("orders", JSON.stringify(food_orders));
 
 // Render and creating elements in it
-function renderPizza(data) {
+function renderPizza(data, node) {
     elList.innerHTML = "";
     for(let item of data) {
 
@@ -182,11 +190,11 @@ function renderPizza(data) {
         divElement.append(btnElement, priceElement);
         textboxElement.append(textElement);
         liElement.append(imgElement, titleElement, textboxElement, divElement);
-        elList.append(liElement);
-
+        pizzaFragment.appendChild(liElement);
     };
+    node.append(pizzaFragment);
 };
-renderPizza(pizzaFood);
+renderPizza(pizzaFood, elList);
 
 // Assigning savatga btn and pushing to the new array
 elList.addEventListener("click", (evt) => {
@@ -197,6 +205,7 @@ elList.addEventListener("click", (evt) => {
         const checkOrder = food_orders.find((item) => item.id == btnId);
         if(!checkOrder) {
             food_orders.push(foundPizza);
+            localStorage.setItem("orders", JSON.stringify(food_orders));
         }
         badgeElement.textContent = `${food_orders.length}+`;
         renderOrders(food_orders);
@@ -264,5 +273,17 @@ function renderOrders(data) {
 const elFinishOrder = document.querySelector(".finish-order");
 
 elFinishOrder.addEventListener("click", () => {
-    
-})
+    const result = food_orders.map((item) => {
+        return (item.pizza_count == counter);
+    });
+    foundUser.user_orders = food_orders;
+});
+
+elMenuBtn.addEventListener("click", (evt) => {
+    evt.preventDefault();
+    elLocation.classList.add("visually-hidden");
+    elPhoneNum.classList.add("visually-hidden");
+    elSelect.classList.add("visually-hidden");
+    elMain.classList.add("visually-hidden");
+    elNavigation.style.display = "block";
+});

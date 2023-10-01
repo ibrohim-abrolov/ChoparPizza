@@ -3,8 +3,8 @@ const elUserName = elForm.querySelector(".form__user-input");
 const elUserPassword = elForm.querySelector(".form__user-password");
 const elUserPhone = elForm.querySelector(".form__user-phone");
 
-const users = JSON.parse(localStorage.getItem('users') || '[]');
-localStorage.setItem("users", JSON.stringify("users"));
+const users = JSON.parse(localStorage.getItem("users") || "[]");
+localStorage.setItem("users", JSON.stringify(users));
 
 
 elForm.addEventListener("submit", (evt) => {
@@ -55,7 +55,7 @@ elForm.addEventListener("submit", (evt) => {
         user_password: passwordValue,
         user_phone: telValue,
         user_orders: [],
-        register_date: `${currentYear}/${currentMonth}/${currentDay}  ${currentHour}: ${currentMinutes}`,
+        register_date: `${currentYear}/${currentMonth}/${currentDay}  ${currentHour}:${currentMinutes}`,
     };
 
     users.push(new_user);

@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chopar pizza</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
     
     <!--   Header start   -->
-    <header class="site-header">
+    <header class="site-header position-relative">
         <div class="container">
             <div class="site-header__wrapper d-flex align-items-center justify-content-between">
                 <a class="logo-link" href="./index.html">
@@ -46,6 +46,35 @@
                     </select>
                     <button class="site-header__menu" type="button"></button>
                 </div>
+                <nav class="site-header__navigation nav position-absolute z-3 bg-warning shadow">
+                    <ul class="nav__list list-unstyled">
+                        <li class="nav__items">
+                            <a class="nav__link" href="./index.html">
+                                Biz haqimizda
+                            </a>
+                        </li>
+                        <li class="nav__items">
+                            <a class="nav__link" href="#">
+                                Menyu
+                            </a>
+                        </li>
+                        <li class="nav__items">
+                            <a class="nav__link" href="#">
+                                Filial
+                            </a>
+                        </li>
+                        <li class="nav__items">
+                            <a class="nav__link" href="#">
+                                Kontaktlar
+                            </a>
+                        </li>
+                        <li class="nav__items">
+                            <a class="nav__link" href="#">
+                                Aksiyalar
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
             <!-- <img src="./images/quvvat.webp" alt=""> -->
         </div>
@@ -83,6 +112,7 @@
                                 <button type="button" class="btn btn-primary finish-order">Buyurtma berish</button>
                             </div>
                         </div>
+                        <img src="./images/close--btn.svg" width="50" alt="">
                     </div>
                 </div>
             </div>
@@ -96,7 +126,7 @@
     </footer>
     <!--   Footer finish   -->
     
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 </html>
