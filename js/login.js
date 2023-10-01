@@ -21,6 +21,6 @@ elForm.addEventListener("submit", (evt) => {
         }
         localStorage.setItem("user_id", registeredUser?.id);
     } else {
-        console.log(yoq);
+        window.location.href = "index.html";
     }
 });

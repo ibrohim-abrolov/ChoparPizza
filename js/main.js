@@ -149,7 +149,7 @@ const pizzaFood = [
         pizza_count: 0,
     },
 ];
-const food_orders = JSON.parse(localStorage.getItem("orders"));
+const food_orders = JSON.parse(localStorage.getItem("orders")) || [];
 localStorage.setItem("orders", JSON.stringify(food_orders));
 
 // Render and creating elements in it
